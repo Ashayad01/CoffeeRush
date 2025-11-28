@@ -59,7 +59,6 @@ table {
 
 body{
     font-family: Arial, Helvetica, sans-serif;
-    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -200,6 +199,14 @@ header {
     background: rgba(41,21,35,0.5)
 }
 
+.img-filter::before{
+    content: "";
+        position: absolute;
+        inset: 0;
+        background: #291523cc;
+        z-index: 1;
+}
+
 #about-text{
     padding: 20px 0;
     width: 70%;
@@ -210,9 +217,158 @@ header {
     padding-bottom: 10px;
 }
 
+ /* Loyalty */
+    #loyalty {
+        position: relative;
+        background-image: url(./WebAssets/Photos/loyatyPhoto.jpg);
+        background-size: cover;
+        padding: 100px 0;
+        display: block;
+        overflow: hidden;
+    }
+
+    #loyalty::before{
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: #291523cc;
+        z-index: 1;
+    }
+
+    #loyalty > *{
+        position: relative;
+        z-index: 2;
+    }
+
+    #loyalty-content {
+        text-align: center;
+    }
+
+    .loyalty-text {
+        color: var(--pale-yellow);
+        padding: 2px;
+    }
+
+    #loyalty-btn {
+        margin-top: 15px;
+    }
+
+/* Beans */
+
+#beans{
+    display: block;
+    /* background-image: url(./WebAssets/Photos/WebBackgrounds.svg);background-size: cover; */
+}
+#beans h2{
+    text-align: center;
+    padding: 20px;
+}
+
+#beans img{
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    border-radius: 20px;
+    background: rgba(41,21,35,0.5)
+}
+
+#bean-text{
+    padding: 20px 0;
+    width: 70%;
+    margin: 0 auto;
+}
+
+#bean-text p{
+    padding-bottom: 10px;
+}
+
+/* Contact */
+#form{
+    background-image: url(./WebAssets/Photos/WebBackgrounds.svg);
+    background-size: cover;
+}
+
+#form-header{
+    padding-top: 50px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+#form-header h2{
+    padding-bottom: 10px;
+}
+ 
+form {
+    width: 350px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label{
+    font-weight: bold;
+    color: var(--primary);
+   
+}
+
+#preferred-contact{
+    margin: 0 auto;
+}
+
+#preferred-contact label {
+    text-align: center;
+    padding: 15px 0 15px 10px;
+}
+
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 10px;
+    border: 2px solid var(--primary);
+}
+
+.radio-group {
+    display: flex;
+    gap: 30px;
+    accent-color: var(--Text);  
+}
+
+.error{
+    color: red;
+    font-size: .85rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/* --- Footer --- */
+
+footer{
+    background-color: var(--primary);
+}
+
+#footer-nav{
+    display: flex;
+}
+
+.footer-menu{
+    list-style: none;
+}
+
+
+
+
+
+
 /* ------- Desktop Screen -------- */
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
+     #logo {
+        width: 70%;
+    }
     .hamburger {
        display: none; 
     }
@@ -232,7 +388,7 @@ header {
         margin: 0 5px;
         border-radius: 50px;
         font-size: 12px;
-
+        font-size: 14px;
     }
 
     .nav-menu a:hover {
@@ -254,11 +410,13 @@ header {
         color: var(--primary);    
     }
 
+    /* About */
+
     #mission{
-        padding: 40px 0;
+        padding: 80px 0;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
+
     }
 
     #mission h2{
@@ -266,26 +424,191 @@ header {
         grid-row: 1;
         text-align: left;
         position: relative;
-        top: 40%;
-        font-size: 40px;
+        font-size: 32px;
+        top: 70%;
+
     }
+
+     #mission img{
+        grid-column: 1;
+        grid-row: 1/ span 2;
+        width: 60%;
+    
+   }
 
     #about-text{
         grid-column: 2;
-        grid-row: 1;
-        position: relative;
-        top: 50%;
-        width: 96%;
-        font-size: 24px;
+        grid-row: 2;
+        margin: 0;
+        padding-left: 20px;
     }
 
-   #mission img{
-    width: 50%;
+    /* Loyalty */
+
+    #loyalty-content h2 {
+        font-size: 32px;
+    }
+
+    #loyalty-content p {
+        font-size: 20px;
+    }
+  
+   
+
+    /* Beans */
+
+     #beans{
+        padding: 80px 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #beans h2{
+        grid-column: 1;
+        grid-row: 1;
+        text-align: left;
+        position: relative;
+        font-size: 32px;
+        top: 70%;
+        left: 12%;
+
+    }
+
+     #beans img{
+        grid-column: 2;
+        grid-row: 1/ span 2;
+        width: 60%;
+    
    }
+
+    #bean-text{
+        grid-column: 1;
+        grid-row: 2;
+        padding-left: 20px;
+    }
+
+    /* contact */
+    #form {
+    display: flex;
 }
 
-@media (min-width: 1025px) {
+#form-header{
+   margin: 0 auto;
+}
+
+#form-header h2{
+    padding-bottom: 10px;
+    font-size: 32px;
+    width: 70%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#form-header p{
+    font-size: 16px;
+    padding-top: 20px;
+    padding-left: 30px;
+}
+
+#form-btn{
+    padding: 15px 25px;
+    font-size: 14px;
+    width: 20%;
+    margin: 0 auto;
+}
+
+  
+}
+
+@media (min-width: 1200px) {
+    
     .nav-menu a{
-        font-size: 13px;
+        font-size: 16px;
     }
+
+    #logo {
+        width: 80%;
+    }
+
+    /* Mission */
+
+    #mission h2{
+        font-size: 45px;
+        top: 75%;
+    }
+
+    #about-text p {
+        font-size: 24px;
+        line-height: 45px;
+    }
+
+    #about-text button {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
+    /* Loyalty */
+    #loyalty-content h2 {
+        font-size: 45px;
+        padding-bottom: 15px;
+    }
+
+    #loyalty-content p {
+        font-size: 24px;
+        padding-bottom: 20px;
+    }
+
+    #loyalty-content button{
+        font-size: 20px;
+        padding: 15px 35px;
+    }
+
+    /* Beans */
+
+    #beans h2{
+        font-size: 45px;
+        top: 75%;
+        left: 14%;
+
+    }
+
+    #bean-text p {
+        font-size: 24px;
+        line-height: 45px;
+    }
+
+    #bean-text button {
+        font-size: 20px;
+        margin-top: 20px;
+        
+    }
+
+    /* contact */
+
+    #form-header h2{
+    padding-bottom: 10px;
+    font-size: 40px;
+}
+
+#form-header p{
+    font-size: 20px;
+}
+
+form{
+    width: 40%;
+    font-size: 20px;
+}
+
+input, textarea{
+    padding: 15px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+input[type="radio"] {
+  height: 1.5em;
+  width: 1.5em;
+  display: block;
+}
 }
