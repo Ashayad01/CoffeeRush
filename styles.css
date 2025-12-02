@@ -170,7 +170,8 @@ header {
 }
 
 #hero {
-    background: #FED598;
+   background-image: url(./WebAssets/Photos/WebBackgrounds.svg);
+background-size: cover;
     display: flex;
 }
 
@@ -348,15 +349,72 @@ input, textarea {
 
 footer{
     background-color: var(--primary);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    text-align: center;
 }
+
+#socials{
+    margin-top: 20px;
+}
+
+#socials h3{
+    color: var(--pale-yellow);
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+#socail-icons a img {
+  filter: brightness(0) invert(1); 
+  transition: filter 0.3s ease;
+}
+
+#socail-icons a:hover img {
+  filter: 
+    brightness(0)
+    saturate(100%)
+    sepia(100%)
+    hue-rotate(315deg)
+    brightness(0.40)
+    contrast(1.2);
+}
+
 
 #footer-nav{
     display: flex;
+    justify-content: center;
+    gap: 4rem;
 }
+
+
+#footer-nav a{
+    text-decoration: none;
+    color: var(--pale-yellow);
+}
+
+#footer-nav li{
+    padding-bottom: 5px;
+}
+
+#footer-nav a:hover{
+    color: var(--Text);
+}
+
+.bold-footer {
+    font-weight: bold;
+}
+
+
 
 .footer-menu{
     list-style: none;
+    padding: 0;
 }
+
 
 
 
@@ -513,8 +571,38 @@ footer{
 #form-btn{
     padding: 15px 25px;
     font-size: 14px;
-    width: 20%;
+    width: 40%;
     margin: 0 auto;
+}
+
+
+/* Footer */
+footer{
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: start;
+    text-align: left;
+    padding: 3rem 4rem;
+}
+
+#solcials{
+    justify-self: end;
+}
+
+#social-icon{
+    
+}
+
+#footer-nav {
+    justify-content: center;
+}
+
+#footer-logo{
+    justify-self: start;
+}
+
+#footer-logo img{
+    width: auto;
+    height: 100%;
 }
 
   
