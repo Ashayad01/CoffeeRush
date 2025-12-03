@@ -186,6 +186,7 @@ background-size: cover;
 
 #mission{
     display: block;
+    padding: 50px 0;
 }
 #mission h2{
     text-align: center;
@@ -217,6 +218,64 @@ background-size: cover;
 #about-text p{
     padding-bottom: 10px;
 }
+
+/* Menu */
+/* Each section controls its own position */
+.drink-section {
+  position: relative;
+  width: 100%;
+  padding: 5rem 0;         
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Bar styling */
+.drink-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+
+  
+}
+
+/* Buttons */
+.drink-btn {
+  padding: 3rem 5rem;
+  border-radius: 20px;
+  font-weight: 600;
+  border: none;
+  font-size: 1.5rem;
+  transition: 0.25s ease;
+}
+
+/* Hover animation */
+.drink-btn:hover {
+  transform: scale(1.05);
+  background-color: var(--Text);
+
+}
+
+/* Drink image */
+.drink-img {
+  position: absolute;
+  top: -40%;
+  left: -3%;
+  z-index: 2;
+  width: auto;
+  height: 100px;
+  max-width: 100%;
+}
+
+.drink-section:nth-child(even) .drink-img {
+  left: auto; 
+  right: -3%;  
+}
+
+
+
 
  /* Loyalty */
     #loyalty {
@@ -253,6 +312,112 @@ background-size: cover;
     #loyalty-btn {
         margin-top: 15px;
     }
+
+    /* Locations */
+
+    #locations{
+        margin: 50px 0;
+    }
+
+    #location-header{
+        text-align: center;
+        padding: 70px 20;
+    }
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .location-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+.img-container {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 3/2;
+  transition: transform 0.3s ease;
+}
+
+.img-container img {
+  width: 100%;
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  object-fit: cover;
+}
+
+
+.img-container:hover img {
+  transform: scale(1.05);
+  filter: brightness(50%);
+}
+
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(41, 21, 35, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: background 0.4s ease, opacity 0.4s ease;
+}
+
+.overlay h2 {
+  color: var(--pale-yellow);
+  font-size: 25px;
+  letter-spacing: 1px;
+  padding-bottom: 10px;
+}
+
+.overlay p {
+    color: var(--pale-yellow);
+    font-size: 18px;
+}
+
+
+.img-container:hover .overlay {
+  background: rgba(41, 21, 35, 0.65);
+  opacity: 1;
+}
+
+.img-container:hover {
+  transform: translateY(-4px);
+}
+
+/* Menu */
+.drink-button{
+    height: 300px;
+    max-width: 900px;
+}
+
+.btn-box{
+    width: 100%;
+    height: 200px;
+    font: 2rem;
+}
+
+.drink-img{
+    height: 420px;
+}
+
+  .drink-button.left .drink-img {
+      left: -60px;
+  }
+
+  .drink-button.right .drink-img {
+      right: -60px;
+  }
 
 /* Beans */
 
@@ -510,8 +675,15 @@ footer{
     #loyalty-content p {
         font-size: 20px;
     }
-  
-   
+  /* Location */
+   #location-header h2{
+    font-size: 40px;
+    padding-bottom: 20px;
+   }
+
+    #location-header p{
+    font-size: 22px;
+   }
 
     /* Beans */
 
@@ -548,6 +720,7 @@ footer{
     /* contact */
     #form {
     display: flex;
+    padding-bottom: 40px;
 }
 
 #form-header{
@@ -580,16 +753,24 @@ footer{
 footer{
     grid-template-columns: 1fr 1fr 1fr;
     align-items: start;
-    text-align: left;
     padding: 3rem 4rem;
 }
 
-#solcials{
-    justify-self: end;
+#socials{
+    justify-self: center;
+    text-align: center;
+    padding-top: 15%;
+    font-size: 30px;
+    
 }
 
-#social-icon{
-    
+#socials h3{
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+#social-icons{
+    justify-content: center;
 }
 
 #footer-nav {
@@ -597,12 +778,17 @@ footer{
 }
 
 #footer-logo{
-    justify-self: start;
+    justify-self: center;
+    
 }
 
 #footer-logo img{
-    width: auto;
-    height: 100%;
+  
+}
+
+.footer-menu {
+    font-size:  18px;
+    padding-top: 40%;
 }
 
   
@@ -672,6 +858,7 @@ footer{
     }
 
     /* contact */
+   
 
     #form-header h2{
     padding-bottom: 10px;
@@ -698,5 +885,20 @@ input[type="radio"] {
   height: 1.5em;
   width: 1.5em;
   display: block;
+}
+
+/* footer */
+
+#socials{
+    font-size: 50px;
+    padding-top: 10%;
+}
+
+#socials h3{
+    font-size: 25px;
+}
+
+.footer-menu{
+    font-size: 22px;
 }
 }
