@@ -9,6 +9,32 @@ hamburger.addEventListener("click", () => {
 });
 
 
+
+// Menu
+function switchProduct(productId){
+    let gallery = document.querySelectorAll('#gallery section');
+    gallery.forEach(product =>{
+        if(product.id.startsWith('product')){
+            product.classList.add('hiddenItem');
+            product.classList.remove('currentItem');
+        }
+    });
+
+    let displayImg = document.getElementById(productId);
+    if(displayImg){
+        displayImg.classList.remove('hiddenItem');
+        displayImg.classList.add('currentItem');
+    }
+}
+
+// event Listeners for Gallery
+document.getElementById('btn1').addEventListener('click', () => switchProduct('product1'));
+document.getElementById('btn2').addEventListener('click', () => switchProduct('product2'));
+document.getElementById('btn3').addEventListener('click', () => switchProduct('product3'));
+document.getElementById('btn4').addEventListener('click', () => switchProduct('product4'));
+
+
+
 // Form
 const emailField = document.getElementById("emailField");
 const phoneField = document.getElementById("phoneField");

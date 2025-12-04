@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
+
+    <title>Menu</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div>
+          <a href="index.html"
+            ><img id="logo" src="./WebAssets/Logos/NavLogo.svg"
+          /></a>
+        </div>
+
+        <!-- HamburgerMenu-->
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="#">Our Beans</a></li>
+          <li><a href="#">Loyalty</a></li>
+          <li><a id="mobile-order" href="#">Mobile Order</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="gallery">
+        <section id="product1" class="currentItem">
+          <h3>Classics</h3>
+          <p>
+            Oil Pastel | 10" x 8"<br />Haunting Oil pastel of a still life. It
+            represents the beauty of decay overtime, preseved forever.<br />PRICE:
+            $200
+          </p>
+          <img
+            src="Images/img_1.jpg"
+            alt="Art piece of a skull on a table surrounded by plants"
+            width="650"
+            height="500"
+          />
+        </section>
+
+        <section id="product2" class="hiddenItem">
+          <h3>Espresso</h3>
+          <p>
+            Oil Pastel | 16" x 20"<br />Oil pastel self portrait expressing the
+            boredom that comes with sitting in class.<br />PRICE: $200
+          </p>
+          <img
+            src="Images/img_2.jpg"
+            alt="This is an oil pastel art piece of a girl up close squishing her face."
+            width="550"
+            height="650"
+          />
+        </section>
+        <section id="product3" class="hiddenItem">
+          <h3>Frosties</h3>
+          <p>
+            Oil Pastel | 8" x 8"<br />Despiction how love can float away.<br />PRICE:
+            $100
+          </p>
+          <img
+            src="Images/img_3.jpg"
+            alt="This is an oil paint painting of a purple woman with jelly fish swillinh out of her heart."
+            width="650"
+            height="650"
+          />
+        </section>
+
+        <section id="product3" class="hiddenItem">
+          <h3>Non-Coffee</h3>
+          <p>
+            Oil Pastel | 8" x 8"<br />Despiction how love can float away.<br />PRICE:
+            $100
+          </p>
+          <img
+            src="Images/img_3.jpg"
+            alt="This is an oil paint painting of a purple woman with jelly fish swillinh out of her heart."
+            width="650"
+            height="650"
+          />
+        </section>
+
+        <section id="switcherButtons">
+          <h2 class="sr-only">Click on a Button to View a Product</h2>
+          <button id="btn1">Classics</button>
+          <button id="btn2">Espresso</button>
+          <button id="btn3">Frosties</button>
+          <button id="btn4">Non-Coffee</button>
+        </section>
+      </section>
+    </main>
+    <footer>
+      <section id="socials">
+        <h3>Follow Us!</h3>
+        <section id="socail-icons">
+          <a href="https://www.instagram.com/coffeerush_/" target="_blank"
+            ><img src="./WebAssets/SocalLogos/Insta.svg" alt="instagram logo"
+          /></a>
+          <a
+            href="https://www.facebook.com/TheCoffeeRushChandler/"
+            target="_blank"
+            ><img src="./WebAssets/SocalLogos/Facebook.svg" alt="Facebook logo"
+          /></a>
+          <a href="https://x.com/CoffeeRush_Cafe" target="_blank"
+            ><img src="./WebAssets/SocalLogos/X.svg" alt="X logo"
+          /></a>
+        </section>
+      </section>
+      <section id="footer-nav">
+        <nav>
+          <ul class="footer-menu">
+            <li><a class="bold-footer" href="#">Shop</a></li>
+            <li><a href="#">Menus</a></li>
+            <li><a href="#">Our Coffee</a></li>
+            <li><a href="#">Learn Coffee</a></li>
+            <li><a href="#">Mobile Order</a></li>
+          </ul>
+        </nav>
+
+        <nav>
+          <ul class="footer-menu">
+            <li><a class="bold-footer" href="#">About</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </nav>
+      </section>
+      <section id="footer-logo">
+        <a><img id="logo" src="./WebAssets/Logos/FooterLogo.svg" /></a>
+      </section>
+    </footer>
+  </body>
+</html>
