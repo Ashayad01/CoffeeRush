@@ -583,8 +583,70 @@ footer{
 
 
 
+/* __________________Menu Page_____________________ */
 
+#menu{
+    background: url(./WebAssets/Photos/WebBackgrounds.svg);
+}
 
+.currentItem{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 3fr;
+    gap: 1rem;
+}
+
+.hiddenItem{
+    display: none;
+}
+
+#switcherButtons{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2.5rem;
+    width: fit-content;
+    margin: 2rem auto;
+}
+
+#switcherButtons button{
+    background-color: var(--primary);
+    border: none;
+    padding: 2rem;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--pale-yellow);
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    border-radius: 20px;
+}
+#switcherButtons button:hover{
+    background-color: var(--Text);
+}
+
+#menu img{
+    grid-row: 1/-1;
+    margin: 4rem 4rem 2rem 15rem;
+    
+    border-radius: 20px;
+}
+
+#menu h3{
+    grid-column: 2/-1;
+    align-self: end;
+    font-weight: bold;
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+#menu p{
+    grid-column: 2/-1;
+    font-size: 25px;
+    line-height: 2.5rem;
+}
+
+.sr-only{
+    display: none;
+}
 
 
 /* ------- Desktop Screen -------- */
