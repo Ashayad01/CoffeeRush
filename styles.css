@@ -692,6 +692,37 @@ h4 {
 }
 
 
+/* ______________Loyaty________________ */
+
+#loyalty-main {
+  text-align: center;       
+  display: flex;
+  flex-direction: column;     
+  justify-content: center;
+  align-items: center;        
+  gap: 1.5rem;                 
+  width: 100%;
+  padding: 2rem 0;
+}
+
+#loyalty-header h2 {
+    padding-bottom: 20px;
+}
+
+#loyalty-main img {
+  display: block;
+  margin: 0 auto;             
+  width: 100%;
+}
+
+#loyal-help h2{
+    padding-bottom: 20px;
+}
+
+#loyal-help a {
+    gap: 2rem;
+}
+
 /* ------- Desktop Screen -------- */
 
 @media (min-width: 700px) {
