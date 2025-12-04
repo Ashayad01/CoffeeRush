@@ -61,7 +61,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     margin: 0 auto;
     max-width: 2000px;
-    background-color: pink;
+    min-width: 400px;
 }
 
 h2 {
@@ -176,18 +176,24 @@ header {
    background-image: url(./WebAssets/Photos/WebBackgrounds.svg);
 background-size: cover;
     display: flex;
+    position: relative;
+    height: 350px;
 }
 
 h1{
-    font-size: 80px;
+    font-size: 30px;
     font-family: "rafaella", sans-serif;
+    position: relative;
+    top: 25%;
+    left: 5%;
+    line-height: 40px;
 }
 
-#hero-slogan {
-    width: 50%;
-}
+
 #hand-coffee {
-    width: 50%;
+    width: 55%;
+    position: absolute;
+    right: 0;
 }
 
 /* About */
@@ -230,31 +236,33 @@ h1{
 /* Home Menu */
 
 #home-menu{
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    max-width: 1000px;
     width: 100%;
+    height: 800px;
     margin: 0 auto;
-
+    background: url(./WebAssets/Photos/Background\ 02svg.svg);
+    background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.hidden-cups {
-    display: none;
-}
 
 #hmenu-containter{
-    margin: 10rem auto;
-    padding: 2rem 5rem;
-    background: url(./WebAssets/Photos/WebBackgrounds.svg);
-    text-align: center;
+    position: relative;
+    top: 40%;
+   text-align: center;
 }
 
 #hmenu-containter h2{
-    /* color: var(--pale-yellow); */
     padding-bottom: 1.5rem;
-    font-size: 35px;
+    font-size: 55px;
 }
+
+#hmenu-containter a{
+    text-decoration: none;
+    color: var(--pale-yellow);
+}
+
+
 
 
 
@@ -534,7 +542,18 @@ footer{
 
 
 /* __________________Menu Page_____________________ */
+#menu{
+    background: url(./WebAssets/Photos/WebBackgrounds.svg);
+}
 
+.menuBackground{
+    background-color: white;
+    width: 80%;
+    border-radius: 80px;
+    margin: 0 auto;
+    position: relative;
+    top: 80px; 
+}
 #classic {
 display: flex;
 gap: 100px;
@@ -545,10 +564,10 @@ padding-top: 90px;
 .classic li {
     font-size: 20px;
     padding-bottom: 25px;
-    
     text-align: center;
     position: relative;
     right: 40%;
+    font-family: "rafaella", sans-serif;
 }
 
 .size-price {
@@ -557,19 +576,60 @@ padding-top: 90px;
     padding-top: 2rem;
 }
 
+.size-price p {
+    font-weight: bold;
+}
+
+
+
 h4 {
     text-align: center;
     font-size: 18px;
     font-weight: bold;
     color: var(--primary);
+     font-family: "rafaella", sans-serif;
 }
 
 
 .menu-options{
     grid-column: 2;
+    display: flex;
+    padding-top: 40px;
+    gap: 40px;
 }
 
 
+.opt-header{
+    color: var(--primary);
+    font-weight: bold;
+     font-family: "rafaella", sans-serif;
+     padding-bottom: 15px;
+}
+
+.menu-options li {
+    font-size: 16px;
+    padding-bottom: 5px;
+    
+}
+
+#non-header {
+    display: flex;
+    gap: 25px;
+    text-align: center;
+}
+
+#non-header .non-p {
+  font-size: 18px; 
+  font-weight: bold;
+}
+
+
+#syrups {
+    display: flex;
+    gap: 30px;
+}
+
+/* Tab controls */
 .currentItem{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -587,6 +647,9 @@ h4 {
     gap: 2.5rem;
     width: fit-content;
     margin: 2rem auto;
+    position: relative;
+    top: 5rem;
+    
 }
 
 #switcherButtons button{
@@ -597,7 +660,7 @@ h4 {
     font-weight: bold;
     color: var(--pale-yellow);
     text-transform: uppercase;
-    margin-bottom: 3rem;
+    margin-bottom: 6rem;
     border-radius: 20px;
 }
 #switcherButtons button:hover{
@@ -631,7 +694,7 @@ h4 {
 
 /* ------- Desktop Screen -------- */
 
-@media (min-width: 768px) {
+@media (min-width: 700px) {
      #logo {
         width: 70%;
     }
@@ -675,7 +738,24 @@ h4 {
         background: var(--pale-yellow);
         color: var(--primary);    
     }
+/* hero */
 
+#hero{
+        height: 500px;
+    }
+
+    h1{
+    font-size: 50px;
+    font-family: "rafaella", sans-serif;
+    position: relative;
+    top: 30%;
+    left: 10%;
+    line-height: 60px;
+    }
+
+    #hand-coffee {
+    width: 45%;
+}
     /* About */
 
     #mission{
@@ -710,27 +790,21 @@ h4 {
     }
 
     /* Home Menu */
-    .hidden-cups {
-    display: block;
+     #home-menu{
+    height: 800px;
 }
 
-#home-menu img {
-    position: absolute;
-    width: 50%;
-    height: auto;
-    
+
+#hmenu-containter{ 
+    top: 40%;
 }
 
-#img-left{
-    top: 24%;
-    left: 55%;
-    transform: rotate(15deg);
+#hmenu-containter h2{       
+    font-size: 80px;
 }
 
-#img-right{
-    top: 25%;
-    right: 58%;
-    transform: rotate(-15deg);
+#hmenu-containter button {
+    padding: 15px 25px;
 }
 
     /* Loyalty */
@@ -873,6 +947,18 @@ footer{
         width: 80%;
     }
 
+    /* hero */
+
+    #hero{
+        height: 750px;
+    }
+    h1{
+    font-size: 80px;
+    top: 30%;
+    left: 10%;
+    line-height: 90px;
+    }
+
     /* Mission */
 
     #mission h2{
@@ -892,34 +978,24 @@ footer{
 
     /* Home menu */
 
-    #home-menu img {
-    width: 60%;
-    
+    #home-menu{
+    height: 800px;
 }
 
 
-
-    #hmenu-containter{
-        padding: 8rem 15rem;
-    }
-
-    #hmenu-containter h2{
-        font-size: 60px;
-    }
-
-
-
-  #img-left{
-    top: 25%;
-    left: 45%;
-    transform: rotate(15deg);
+#hmenu-containter{ 
+    top: 40%;
 }
 
-#img-right{
-    top: 25%;
-    right: 50%;
-    transform: rotate(-15deg);
+#hmenu-containter h2{       
+    font-size: 80px;
 }
+
+#hmenu-containter button {
+    padding: 15px 25px;
+}
+
+
 
     /* Loyalty */
     #beans{
