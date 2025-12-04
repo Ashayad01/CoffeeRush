@@ -12,7 +12,7 @@ hamburger.addEventListener("click", () => {
 
 // Menu
 function switchProduct(productId){
-    let gallery = document.querySelectorAll('#gallery section');
+    let gallery = document.querySelectorAll('#menu section');
     gallery.forEach(product =>{
         if(product.id.startsWith('product')){
             product.classList.add('hiddenItem');
