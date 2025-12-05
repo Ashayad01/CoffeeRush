@@ -173,20 +173,23 @@ header {
 }
 
 #hero {
-   background-image: url(./WebAssets/Photos/WebBackgrounds.svg);
-background-size: cover;
+   background-image: url(./WebAssets/HeroIMg/peter-pivak-Iiqo64hiwZo-unsplash.jpg);
+   background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center;
     display: flex;
     position: relative;
-    height: 350px;
+    height: 300px;
 }
 
 h1{
     font-size: 30px;
     font-family: "rafaella", sans-serif;
     position: relative;
-    top: 25%;
+    top: 40%;
     left: 5%;
     line-height: 40px;
+    color: var(--pale-yellow);
 }
 
 
@@ -542,18 +545,8 @@ footer{
 
 
 /* __________________Menu Page_____________________ */
-#menu{
-    background: url(./WebAssets/Photos/WebBackgrounds.svg);
-}
 
-.menuBackground{
-    background-color: white;
-    width: 80%;
-    border-radius: 80px;
-    margin: 0 auto;
-    position: relative;
-    top: 80px; 
-}
+
 #classic {
 display: flex;
 gap: 100px;
@@ -985,8 +978,8 @@ footer{
     }
     h1{
     font-size: 80px;
-    top: 30%;
-    left: 10%;
+    top: 50%;
+    left: 8%;
     line-height: 90px;
     }
 
