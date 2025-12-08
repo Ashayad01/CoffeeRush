@@ -440,6 +440,27 @@ label{
    
 }
 
+
+.required{
+  display: inline-block;
+  color: #DE0B63;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.message{
+    display: none;
+    color: #DE0B63;
+    font-size: 1.2rem;
+    margin: 0.25rem 0;
+    font-weight: bold;
+  }
+
+  .message.error{
+    display: block;
+  }
+
+
 #preferred-contact{
     margin: 0 auto;
 }
@@ -468,9 +489,35 @@ input, textarea {
     font-size: .85rem;
 }
 
+.errorInput{
+    border: 2px solid var(--Text);
+}
+
 .hidden {
     display: none;
 }
+
+#success h2{
+    text-align: center;
+    color: var(--second-base);
+  }
+#success p{
+    text-align: center;
+    color: var(--second-base);
+    font-size: 25px;
+    line-height: 2rem;
+    margin: 2rem auto;
+    font-weight: bold;
+}  
+  #success.hide{
+    display: none;
+  }
+  
+  #success.show{
+    display: block;
+  }
+
+
 
 /* --- Footer --- */
 

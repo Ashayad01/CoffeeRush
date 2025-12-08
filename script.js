@@ -36,87 +36,93 @@ document.getElementById('btn4').addEventListener('click', () => switchProduct('p
 
 
 // Form
-// Form fields
-const emailField = document.getElementById("emailField");
-const phoneField = document.getElementById("phoneField");
-const emailInput = document.getElementById("email");
-const phoneInput = document.getElementById("phone");
+function validateForm(e){
+    e.preventDefault();
+    
+    let myForm = document.getElementById("myForm");
+    let errorSpans = document.querySelectorAll(".message");
+    let isValid = true;
 
-// Toggle visibility + disable inactive inputs
-document.querySelectorAll("input[name='contactPref']").forEach((radio) => {
-  radio.addEventListener("change", () => {
-    if (radio.value === "email") {
-      emailField.classList.remove("hidden");
-      phoneField.classList.add("hidden");
-      emailInput.disabled = false;
-      phoneInput.disabled = true;
-      phoneInput.value = "";
-    } else {
-      phoneField.classList.remove("hidden");
-      emailField.classList.add("hidden");
-      phoneInput.disabled = false;
-      emailInput.disabled = true;
-      emailInput.value = "";
+    // reset display of the error inputs before validating
+    myForm.firstName.classList.remove("errorInput");
+    myForm.lastName.classList.remove("errorInput");
+    myForm.phoneNumber.classList.remove("errorInput");
+    myForm.email.classList.remove("errorInput");
+    myForm.message.classList.remove("errorInput");
+    
+    errorSpans.forEach(function(span){
+      span.classList.remove("error");
+    });
+    
+    document.querySelector("#success").classList.remove("show");
+    document.querySelector("#success").classList.add("hide");
+    
+ 
+    let phoneRegex =  /^\d{3}-\d{3}-\d{4}$/;
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // FIRST NAME
+    if(myForm.firstName.value === ""){
+      myForm.firstName.classList.add("errorInput");
+      errorSpans[0].classList.add("error");
+      isValid = false;
     }
-  });
-});
 
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-  let valid = true;
-
-  // Clear errors
-  document.querySelectorAll(".error").forEach(err => err.textContent = "");
-
-  // Name validation
-  const nameRegex = /^[A-Za-z]+$/;
-  const first = document.getElementById("firstName").value.trim();
-  const last = document.getElementById("lastName").value.trim();
-
-  if (!nameRegex.test(first)) {
-    document.getElementById("firstNameError").textContent = "Only letters allowed.";
-    valid = false;
-  }
-  if (!nameRegex.test(last)) {
-    document.getElementById("lastNameError").textContent = "Only letters allowed.";
-    valid = false;
-  }
-
-  // Contact preference
-  const pref = document.querySelector("input[name='contactPref']:checked");
-  if (!pref) {
-    document.getElementById("contactPrefError").textContent = "Select a contact preference.";
-    valid = false;
-  }
-
-  // Email validation
-  if (pref && pref.value === "email") {
-    const email = emailInput.value.trim();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!emailRegex.test(email)) {
-      document.getElementById("emailError").textContent = "Enter a valid email address.";
-      valid = false;
+    // LAST NAME
+    if(myForm.lastName.value === ""){
+      myForm.lastName.classList.add("errorInput");
+      errorSpans[1].classList.add("error");
+      isValid = false;
     }
-  }
 
-  // Phone validation
-  if (pref && pref.value === "phone") {
-    const phone = phoneInput.value.trim();
-    const phoneRegex = /^\d{10}$/;
-
-    if (!phoneRegex.test(phone)) {
-      document.getElementById("phoneError").textContent = "Enter a valid 10-digit phone number.";
-      valid = false;
+    // PHONE VALIDATION (only if phone is selected)
+    if (document.querySelector('input[name="contactPref"]:checked')?.value === "phone") {
+      if(!phoneRegex.test(myForm.phoneNumber.value)){
+        myForm.phoneNumber.classList.add("errorInput");
+        errorSpans[2].classList.add("error");
+        isValid = false;
+      }
     }
-  }
 
-  // Message validation
-  const message = document.getElementById("message").value.trim();
-  if (message.length === 0) {
-    document.getElementById("messageError").textContent = "Message is required.";
-    valid = false;
-  }
+    // EMAIL VALIDATION (only if email is selected)
+    if (document.querySelector('input[name="contactPref"]:checked')?.value === "email") {
+      if(!emailRegex.test(myForm.email.value)){
+        myForm.email.classList.add("errorInput");
+        errorSpans[3].classList.add("error");
+        isValid = false;
+      }
+    }
 
-});
+    // MESSAGE
+    if(myForm.message.value === ""){
+      myForm.message.classList.add("errorInput");
+      errorSpans[4].classList.add("error");
+      isValid = false;
+    }
+
+    // SUCCESS
+    if(isValid){      
+      document.querySelector("#success").classList.remove("hide");
+      document.querySelector("#success").classList.add("show");
+  
+      let successP = document.getElementById("formSub");
+      successP.innerHTML =
+        '<strong>First Name:</strong> ' + myForm.firstName.value +
+        "<br><strong>Last Name:</strong>" + myForm.lastName.value +
+        "<br><strong>Phone Number:</strong>"  + myForm.phoneNumber.value +
+        "<br><strong>Email:</strong>" + myForm.email.value +
+        "<br><strong>Message:</strong>" + myForm.message.value;
+      
+      myForm.firstName.value = '';
+      myForm.lastName.value = '';
+      myForm.phoneNumber.value = '';
+      myForm.email.value = '';
+      myForm.message.value = '';
+      myForm.firstName.focus();
+    }
+}
+
+// attach event handler to call for form validation on submission
+document.getElementById("myForm").addEventListener("submit", validateForm);
+
 

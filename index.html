@@ -153,8 +153,61 @@
           <h2>Have Something to Tell Us?</h2>
           <p>Don’t hesitate to tell us, we will rush to reply!</p>
         </section>
+        <form id="myForm">
+  <!-- FIRST NAME -->
+  <label for="firstName">First Name<span class="required">*</span></label>
+  <input name="firstName" id="firstName" type="text" />
+  <span class="message">Please enter your first name</span>
 
-        <form id="contactForm">
+  <!-- LAST NAME -->
+  <label for="lastName">Last Name<span class="required">*</span></label>
+  <input name="lastName" id="lastName" type="text" />
+  <span class="message">Please enter your last name</span>
+
+  <!-- RADIO BUTTONS -->
+  <div id="preferred-contact">
+    <label>Preferred Contact<span class="required">*</span></label>
+
+    <div class="radio-group">
+      <label>
+        <input type="radio" name="contactPref" value="email" /> Email
+      </label>
+
+      <label>
+        <input type="radio" name="contactPref" value="phone" /> Phone
+      </label>
+    </div>
+  </div>
+
+  <!-- PHONE FIELD (HIDDEN BY DEFAULT) -->
+  <div id="phoneField" class="hidden">
+    <label for="phoneNumber">Phone Number</label>
+    <input name="phoneNumber" id="phoneNumber" type="text" />
+    <span class="message">Please enter a valid phone number (000-000-0000)</span>
+  </div>
+
+  <!-- EMAIL FIELD (HIDDEN BY DEFAULT) -->
+  <div id="emailField" class="hidden">
+    <label for="email">Email</label>
+    <input name="email" id="email" type="text" />
+    <span class="message">Please enter a valid email</span>
+  </div>
+
+  <!-- MESSAGE -->
+  <label for="message">Message<span class="required">*</span></label>
+  <textarea name="message" id="message"></textarea>
+  <span class="message">Please enter a message</span>
+
+  <!-- SUBMIT -->
+  <button type="submit" id="form-btn">Submit</button>
+</form>
+
+<!-- SUCCESS DISPLAY -->
+<section id="success" class="hide">
+  <h2>Submission Successful!</h2>
+  <p id="formSub"></p>
+
+        <!-- <form id="contactForm">
           <label>First Name</label>
           <input type="text" id="firstName" required />
           <span class="error" id="firstNmeError"></span>
@@ -201,7 +254,7 @@
           <span class="error" id="messageError"></span>
 
           <button type="submit" id="form-btn">Submit</button>
-        </form>
+        </form> -->
       </section>
     </main>
     <footer>
